@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Website via WhatsApp</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function sendToWhatsApp(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const details = document.getElementById('details').value;
+      const phone = document.getElementById('phone').value;
+
+      const message = `*Website Design Request*%0A%0A👤 *Name:* ${name}%0A📧 *Email:* ${email}%0A📱 *Phone:* ${phone}%0A📝 *Project Details:* %0A${details}`;
+      const whatsappNumber = "27657240277"; // Replace with your number in international format
+      const url = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+
+<header>
+  <h1>Request a Website via WhatsApp</h1>
+  <p>Fill in your info and send it directly to us!</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="request.html">Request a Site</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="pricing.html">Pricing</a>
+</nav>
+
+<div class="container">
+  <form onsubmit="sendToWhatsApp(event)">
+    <label for="name">Your Full Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Your Email Address:</label>
+    <input type="email" id="email" required>
+
+    <label for="details">Describe the Website You Want:</label>
+    <textarea id="details" rows="5" required></textarea>
+
+    <label for="phone">Phone Number (Optional):</label>
+    <input type="tel" id="phone">
+
+    <button type="submit">Send via WhatsApp</button>
+  </form>
+</div>
+
+<a href="https://wa.me/27657240277?text=Hi%20I%20want%20to%20discuss%20a%20website%20project" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp" />
+</a>
+
+<footer>
+  &copy; 2025 Your Web Design Brand
+</footer>
+
+</body>
+</html>
